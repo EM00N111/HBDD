@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ✅ BLACK → PINK GRADIENT (SAFE) */
+  background: linear-gradient(135deg, #000000, #1a0010, #ff2d75);
+}
+
+/* ✅ SAFE LIGHT EFFECT (NO BLUR ISSUE) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255,45,117,0.15), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 🔤 TITLE */
+.screen {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  text-align: center;
+  z-index: 10;
+}
+
+.screen h1 {
+  color: #000; /* ✅ BLACK TEXT */
+  font-weight: 700;
+}
+
+/* ❤️ BUTTON (UNCHANGED) */
+.love-btn {
+  font-size: 60px;
+  cursor: pointer;
+  margin-top: 20px;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  to { transform: scale(1.2); }
+}
+
+/* 🌳 CANVAS (UNCHANGED) */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* 💌 WISH TEXT */
+.wish {
+  position: absolute;
+  left: 5%;
+  top: 25%;
+  width: 30%;
+  color: #000; /* ✅ BLACK TEXT */
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 0;
+  transition: 2s ease;
+  z-index: 10;
+
+  /* ✅ CLEAN PREMIUM BOX (NO HEAVY EFFECT) */
+  background: rgba(255,255,255,0.12);
+  padding: 18px;
+  border-radius: 14px;
+}
